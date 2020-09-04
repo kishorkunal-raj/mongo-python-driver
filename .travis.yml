@@ -17,7 +17,6 @@ services:
 
 script: 
   - PYMONGO_MUST_CONNECT=1 python setup.py test
-  - |
-    if [[ "${TRAVIS_CPU_ARCH}" == "ppc64le" ]]; then
+  - if [[ "${TRAVIS_CPU_ARCH}" == "ppc64le" ]]; then
   	 sudo chown -Rvf $USER:$GROUP ~/.cache/pip/wheels
     fi 
